@@ -1,0 +1,33 @@
+Installing Ghostscript 10.03.1 Without Sudo
+
+This guide will help you install Ghostscript (gs10.03.1) locally on your server or instance without needing sudo privileges. The installation will be done in your home directory.
+
+Steps to Install Ghostscript Locally
+
+1. Download Ghostscript Source
+Download the source code for Ghostscript version 10.03.1 using wget:
+
+wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10031/ghostscript-10.03.1.tar.gz
+
+2. Extract the Source
+tar -zxvf ghostscript-10.03.1.tar.gz
+
+3. Configure the Build
+cd ghostscript-10.03.1
+./configure --prefix=$HOME/ghostscript
+
+4. Compile Ghostscript
+make
+
+5. Install Ghostscript Locally
+make install
+
+6. Update Your PATH
+export PATH=$HOME/ghostscript/bin:$PATH
+
+7. Verify Installation
+gs --version
+
+You should see the output like this: 10.03.1
+
+Ghostscript Installation Completed!
